@@ -3,18 +3,21 @@
 // if (live_call(argument0, argument1)) return live_result; // For 2 arg scripts
 if (live_call()) return live_result;
 
-var lineColor = make_color_rgb(143,204,203);
-draw_set_color(lineColor);
 
-var lineWidth = 4;
-var lineLength = 10;
-var lineX = room_width/2;
-var lineYStart = 4;
+if(!isGameOver) {
+	var lineColor = make_color_rgb(143,204,203);
+	draw_set_color(lineColor);
 
-for(var i = lineYStart; i < room_width; i += lineLength*2) {
-	draw_line_width(lineX,i,lineX,i+lineLength, lineWidth);
+	var lineWidth = 4;
+	var lineLength = 10;
+	var lineX = room_width/2;
+	var lineYStart = 4;
+
+	for(var i = lineYStart; i < room_width; i += lineLength*2) {
+		draw_line_width(lineX,i,lineX,i+lineLength, lineWidth);
+	}
+
 }
-
 // Left score
 
 draw_set_font(fntSymtextLarge);
@@ -42,4 +45,11 @@ if(global.rightScore + global.leftScore == 0) {
 	draw_set_halign(fa_left)
 draw_text(room_width/2, room_height, "  Button 2\n  Boost");
 }
+if(isGameOver) {
+	draw_set_font(fntSymtextMedium);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_center)
+	draw_text(room_width/2, room_height/2, "Peace at Last");
+}
+
 draw_set_alpha(1.0)

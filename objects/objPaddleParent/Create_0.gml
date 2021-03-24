@@ -3,4 +3,4 @@
 // if (live_call(argument0, argument1)) return live_result; // For 2 arg scripts
 if (live_call()) return live_result;
 
-maxSpeed = 2.2
+maxSpeed = 2.7
