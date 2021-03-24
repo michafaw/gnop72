@@ -15,4 +15,5 @@ if(ball.y > y) {
 
 movementY = clamp(movementY, -maxSpeed, maxSpeed)
 
+
 y += movementY;

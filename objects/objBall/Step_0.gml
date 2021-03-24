@@ -80,11 +80,15 @@ var collided = false;
 
 // Walls
 if(bbox_left <= 0) {
-	speedX = abs(speedX);
-	collided = true;
+	//speedX = abs(speedX);
+	//collided = true;
+	global.rightScore += 1;
+	alarm[0] = 1;
 } else if(bbox_right >= room_width) {
-	speedX = -abs(speedX);
-	collided = true;
+	//speedX = -abs(speedX);
+	//collided = true;
+	global.leftScore += 1;
+	alarm[0] = 1;
 }
 
 if(bbox_top <= 0) {
@@ -95,6 +99,7 @@ else if(bbox_bottom >= room_height) {
 	speedY = -abs(speedY);
 	collided = true;
 }
+
 
 
 

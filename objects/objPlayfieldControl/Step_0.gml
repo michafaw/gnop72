@@ -5,3 +5,8 @@ if (live_call()) return live_result;
 
 if(keyboard_check_pressed(vk_escape))
 	room_restart();
+	
+global.worldSpeedMult = 1.0;
+global.paddleSpeedMult = 0.25;
+global.ballSpeedMult = 0.75;
+
